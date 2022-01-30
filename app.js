@@ -8,6 +8,9 @@ const shopRoutes = require("./routes/shop");
 
 const app = express();
 
+// Built-in middleware that allows access to static files in the 'public' directory
+app.use(express.static(path.join(__dirname, "public")));
+// Parses the url-encoded data in the request body
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // The router object can be plugged in as a middleware.
