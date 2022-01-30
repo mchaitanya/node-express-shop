@@ -1,3 +1,5 @@
+const path = require("path");
+
 const express = require("express");
 const bodyParser = require("body-parser");
 
@@ -12,8 +14,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/admin", adminRoutes);
 app.use(shopRoutes);
 
+// Catch-all handler at the end to send back 404 errors
 app.use((req, res) => {
-  res.status(404).send("<h1>Page not found</h1>");
+  res
+    .status(404)
+    .sendFile(path.join(__dirname, "views", "page-not-found.html"));
 });
 
 app.listen(3000, () => {
