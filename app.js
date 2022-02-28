@@ -21,9 +21,10 @@ app.use(shopRoutes);
 
 // Catch-all handler at the end to send back 404 errors
 app.use((req, res) => {
-  res
-    .status(404)
-    .sendFile(path.join(__dirname, "views", "page-not-found.html"));
+  // res
+  //   .status(404)
+  //   .sendFile(path.join(__dirname, "views", "page-not-found.html"));
+  res.status(404).render("page-not-found", { pageTitle: "Page Not Found" });
 });
 
 app.listen(3000, () => {
