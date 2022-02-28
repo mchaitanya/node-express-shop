@@ -17,7 +17,7 @@ router.get("/", (req, res, next) => {
   // res.sendFile(path.join(require.main.path, "views", "shop.html"));
 
   // Render the shop template.
-  res.render("shop");
+  res.render("shop", { pageTitle: "My Shop", prods: products });
 });
 
 module.exports = router;
