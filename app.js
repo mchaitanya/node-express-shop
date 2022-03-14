@@ -7,7 +7,7 @@ const { routes: adminRoutes } = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
 const app = express();
-app.set("view engine", "pug");
+app.set("view engine", "ejs");
 app.set("views", "views");
 
 // Built-in middleware that allows access to static files in the 'public' directory
